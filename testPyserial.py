@@ -28,7 +28,7 @@ GAMMA = 0.99
 choosen_action = -1
 observation = 0
 reward = 0
-updateQValue = 0
+#updateQValue = 0
 qtable = QTable.QTable ()
 current_state = -1
 next_state = -1
@@ -38,7 +38,7 @@ file = open ("QTableSaves.txt", "w")
 def getValue (obs) : # \r \n
 	line = port.readline ().decode ("utf-8")
 	value = -1
-#	print (line)
+	#print (line)
 	if len (line) <= 2 :
 		return (Capteur.Captor.ERROR, Capteur.Captor.ERROR)
 
@@ -78,7 +78,7 @@ while (True) :
 
 # Act
 	if choosen_action == 1 :
-		game.press_up ()
+		port.write (bytes ("0", "utf-8")) ;
 	else :
 		pass
 
